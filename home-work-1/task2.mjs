@@ -12,16 +12,14 @@ const intersection = (...args) => {
       lists = args;
     }
 
-    for (const currentList of lists) {
-      for (const currentValue of currentList) {
-        if (result.indexOf(currentValue) == -1) {
-          if (
-            lists.filter((obj) => {
-              return obj.indexOf(currentValue) == -1;
-            }).length == 0
-          ) {
-            result.push(currentValue);
-          }
+    for (const currentValue of lists[0]) {
+      if (result.indexOf(currentValue) == -1) {
+        if (
+          lists.filter((obj) => {
+            return obj.indexOf(currentValue) == -1;
+          }).length == 0
+        ) {
+          result.push(currentValue);
         }
       }
     }
